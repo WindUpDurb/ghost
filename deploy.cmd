@@ -108,7 +108,7 @@ SET "PATH=%PATH%;%%F"
 echo Installing Yarn Packages.
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd yarn install --production --network-timeout 1000000
+  call :ExecuteCmd yarn install --production 
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
