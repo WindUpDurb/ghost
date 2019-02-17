@@ -99,7 +99,7 @@ call :SelectNodeVersion
 
 :: 3. Install Yarn
 echo Verifying Yarn Install.
-call :ExecuteCmd !NPM_CMD! install yarn -g
+call :ExecuteCmd !NPM_CMD! install yarn --network-timeout 1000000 -g
 FOR /F "tokens=* USEBACKQ" %%F IN (`npm config get prefix`) DO (
 SET "PATH=%PATH%;%%F"
 )
